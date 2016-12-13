@@ -1,5 +1,8 @@
 instructions = open('input.txt').read().split(', ')
 
+print('')
+print('-----01-----')
+
 # Vectors
 
 NORTH = 0
@@ -35,11 +38,14 @@ for i in instructions:
     elif current_vector == WEST:
         current_location[0] -= inted_i
 
-print(current_location)
+print('HQ coordinates:  [{}, {}]'.format(current_location[0],current_location[1]))
+print('Block offset:    [{}]'.format(abs(current_location[0])+abs(current_location[1])))
 
 
 # part2
 
+print('')
+print('-----02-----')
 
 class Map(object):
     def __init__(self):
@@ -80,6 +86,7 @@ for i in instructions:
             map_.add_to_map(list(current_location))
 
         else:
-            print('FIRST ::: {}'.format(map_.first_location))
+            print('HQ coordinates:  {}'.format(map_.first_location))
+            print('Block offset:    {}'.format(abs(map_.first_location[0])+abs(map_.first_location[1])))
             break_ = 1
             break
