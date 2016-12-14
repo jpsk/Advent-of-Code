@@ -7,6 +7,7 @@ print('-----01-----')
 input_ = list([i.replace('[', " ").replace(']', " ") for i in input_])
 input_ = list([i.split(" ") for i in input_])
 
+
 def abba_positive(str_):
     for j in range(len(str_) - 3):
         if str_[j] == str_[j + 3] and str_[j + 1] == str_[j + 2] and str_[j] != str_[j + 1]:
@@ -36,7 +37,6 @@ print('-----02-----')
 
 supports_ssl = 0
 
-
 def get_aba(str_):
     aba = []
     for i in range(len(str_) - 2):
@@ -46,7 +46,6 @@ def get_aba(str_):
 
 
 def ssl_positive(h_abalist, s_abalist):
-
     reversed_h_abalist = []
     for h in h_abalist:
         entry = h[1] + h[0] + h[1]
