@@ -1,4 +1,4 @@
-import sys
+import sys, time
 
 input_ = open('input.txt').read().splitlines()
 
@@ -57,7 +57,6 @@ class Parser(object):
         elif instruction[1] == 'column':
             self.__rotate_v(int(instruction[2][2:]), int(instruction[-1]))
 
-
     def parse(self):
         for i in self.instructions:
             self.step(i)
@@ -65,19 +64,14 @@ class Parser(object):
                 print("")
                 print("Instruction: {}".format(i))
                 self.print_matrix()
-                # time.sleep(0.05)
-
 
 print('')
 print('-----01,02-----')
 
 parser = Parser(input_, True)
-
-
 parser.parse()
 
 lights = 0
-
 for x in parser.matrix:
     lights += x.count('*')
 
